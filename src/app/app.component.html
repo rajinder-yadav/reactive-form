@@ -1,3 +1,34 @@
 <h1>
   {{title}}
 </h1>
+
+<div class="mb3 pa2">
+  {{signupForm.value|json}}
+</div>
+
+<form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="fl w-20 ba br3 pa3 bg-washed-blue ml3">
+    <div class="mb3">
+      <label for="userid">Username</label>
+      <input type="text" formControlName="userid" class="fr">
+    </div>
+
+    <div class="mb3">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" class="fr">
+    </div>
+
+    <div class="mb3">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="fr">
+    </div>
+
+    <button type="submit"
+      [disabled]="signupForm.invalid"
+      class="fr white"
+      [ngClass]="{'bg-dark-blue': signupForm.valid, 'bg-moon-gray': signupForm.invalid}"
+      [ngClass]="{'b--dark-blue': signupForm.valid, 'b--moon-gray': signupForm.invalid}">
+      Signup
+    </button>
+  </div>
+</form>
