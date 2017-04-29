@@ -2,6 +2,8 @@ export interface SignupModel {
   userid: string;
   email: string;
   password: string;
-  account: string;
-  gender?: string;
+  profile: {
+    account: string;
+    gender?: string;
+  }
 }

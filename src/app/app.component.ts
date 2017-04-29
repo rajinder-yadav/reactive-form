@@ -21,8 +21,10 @@ export class AppComponent implements OnInit {
       userid: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      account: ['', Validators.required],
-      gender: ['']
+      profile: this.fb.group({
+        account: ['', Validators.required],
+        gender: ['']
+      })
     });
   }
 

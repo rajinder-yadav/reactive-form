@@ -19,24 +19,26 @@
       <input type="password" formControlName="password" class="fr ml3">
     </div>
 
-    <div *ngFor="let account of accounts">
-      <input type="radio"
-             [id]="account"
-             [value]="account"
-             formControlName="account">
-        <label [attr.for]="account">{{account}}</label>
+    <div formGroupName="profile">
+      <div *ngFor="let account of accounts">
+        <input type="radio"
+              [id]="account"
+              [value]="account"
+              formControlName="account">
+          <label [attr.for]="account">{{account}}</label>
 
-    </div>
+      </div>
 
-    <div class="fl w-100 mt3">
-      Gender
-      <select name="gender" formControlName="gender">
-        <option *ngFor="let gender of genders"
-          [value]="gender">
-            {{gender}}
-          </option>
+      <div class="fl w-100 mt3">
+        Gender
+        <select name="gender" formControlName="gender">
+          <option *ngFor="let gender of genders"
+            [value]="gender">
+              {{gender}}
+            </option>
 
-      </select>
+        </select>
+      </div>
     </div>
 
     <button type="submit"
