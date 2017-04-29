@@ -22,7 +22,6 @@
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/tachyons/css/tachyonds.min.css"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
