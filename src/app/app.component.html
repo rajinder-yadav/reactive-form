@@ -28,6 +28,17 @@
 
     </div>
 
+    <div class="fl w-100 mt3">
+      Gender
+      <select name="gender" formControlName="gender">
+        <option *ngFor="let gender of genders"
+          [value]="gender">
+            {{gender}}
+          </option>
+
+      </select>
+    </div>
+
     <button type="submit"
       [disabled]="signupForm.invalid"
       class="fr white"

@@ -3,4 +3,5 @@ export interface SignupModel {
   email: string;
   password: string;
   account: string;
+  gender?: string;
 }

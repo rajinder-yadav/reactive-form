@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   title = 'Sign-Up Reactive Form';
 
   accounts = ['Free', 'Basic', 'Premium'];
+  genders = ['Male', 'Female'];
 
   signupForm: FormGroup;
 
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit {
       userid: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      account: ['', Validators.required]
+      account: ['', Validators.required],
+      gender: ['']
     });
   }
 
