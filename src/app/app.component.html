@@ -1,22 +1,39 @@
 <h1>
   {{title}}
 </h1>
-
+{{signupForm.hasError|json}}
 <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit(); signupForm.reset()">
   <div class="fl ba br3 pa3 bg-washed-blue ml3 signup-width">
     <div class="fl w-100 mb3">
       <label for="userid">Username</label>
       <input type="text" formControlName="userid" class="fr ml3">
+      <div *ngIf="(signupForm.get('userid').hasError('required') &&
+                  signupForm.get('userid').touched)
+                  ||
+                  signupForm.get('userid').hasError('minlength')"
+      class="fl w-100 bg-washed-red pa2 mt2">
+      Required field, minimum 4 characters.
+      </div>
     </div>
 
     <div class="fl w-100 mb3">
       <label for="email">Email</label>
       <input type="email" formControlName="email" class="fr ml3">
+      <div *ngIf="signupForm.get('email').hasError('required') &&
+                  signupForm.get('email').touched"
+      class="fl w-100 bg-washed-red pa2 mt2">
+        Your email is required.
+      </div>
     </div>
 
     <div class="fl w-100 mb3">
       <label for="password">Password</label>
       <input type="password" formControlName="password" class="fr ml3">
+      <div *ngIf="signupForm.get('password').hasError('required') &&
+                  signupForm.get('password').touched"
+      class="fl w-100 bg-washed-red pa2 mt2">
+        Password is required.
+      </div>
     </div>
 
     <div formGroupName="profile">
