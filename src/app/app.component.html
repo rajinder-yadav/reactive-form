@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 
-<form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit(); form.reset()">
+<form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit(); signupForm.reset()">
   <div class="fl ba br3 pa3 bg-washed-blue ml3 signup-width">
     <div class="fl w-100 mb3">
       <label for="userid">Username</label>
@@ -17,6 +17,15 @@
     <div class="fl w-100 mb3">
       <label for="password">Password</label>
       <input type="password" formControlName="password" class="fr ml3">
+    </div>
+
+    <div *ngFor="let account of accounts">
+      <input type="radio"
+             [id]="account"
+             [value]="account"
+             formControlName="account">
+        <label [attr.for]="account">{{account}}</label>
+
     </div>
 
     <button type="submit"
