@@ -7,20 +7,20 @@
 </div>
 
 <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-  <div class="fl w-20 ba br3 pa3 bg-washed-blue ml3">
+  <div class="fl ba br3 pa3 bg-washed-blue ml3">
     <div class="mb3">
       <label for="userid">Username</label>
-      <input type="text" formControlName="userid" class="fr">
+      <input type="text" formControlName="userid" class="fr ml3">
     </div>
 
     <div class="mb3">
       <label for="email">Email</label>
-      <input type="email" formControlName="email" class="fr">
+      <input type="email" formControlName="email" class="fr ml3">
     </div>
 
     <div class="mb3">
       <label for="password">Password</label>
-      <input type="password" formControlName="password" class="fr">
+      <input type="password" formControlName="password" class="fr ml3">
     </div>
 
     <button type="submit"
