@@ -56,13 +56,18 @@
 
         </select>
       </div>
+
+    </div>
+
+    <div class="fl w-100 mt3 mb3">
+      <input type="checkbox" id="emailDeals" formControlName="emailDeals">
+      <label for="emailDeals">Register for daily deal!</label>
     </div>
 
     <button type="submit"
-      [disabled]="signupForm.invalid"
+      [disabled]="signupForm.invalid || !signupForm.value.termOfUse"
       class="fr white"
-      [ngClass]="{'bg-dark-blue': signupForm.valid, 'bg-moon-gray': signupForm.invalid}"
-      [ngClass]="{'b--dark-blue': signupForm.valid, 'b--moon-gray': signupForm.invalid}">
+      [ngClass]="{'bg-dark-blue': signupForm.valid, 'bg-moon-gray': signupForm.invalid}">
       Signup
     </button>
   </div>

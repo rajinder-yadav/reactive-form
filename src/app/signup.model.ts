@@ -5,5 +5,6 @@ export interface SignupModel {
   profile: {
     account: string;
     gender?: string;
-  }
+  };
+  emailDeals: boolean;
 }

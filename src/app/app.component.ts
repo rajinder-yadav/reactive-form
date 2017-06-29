@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
       profile: this.fb.group({
         account: ['', Validators.required],
         gender: ['']
-      })
+      }),
+      emailDeals: false
     });
   }
 
